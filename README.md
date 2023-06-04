@@ -12,6 +12,9 @@ If bundler is not being used to manage dependencies, install the gem by executin
 
     $ gem install socials_regex
 
+### Requirements
+This gem requires Ruby 2.6+
+
 ## Usage
 
 TODO: Write usage instructions here

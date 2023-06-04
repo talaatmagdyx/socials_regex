@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative "socials_regex/version"
+require_relative 'socials_regex/version'
 
 module SocialsRegex
   class Error < StandardError; end
