@@ -23,7 +23,7 @@ Gem::Specification.new do |spec|
   spec.metadata['bug_tracker_uri'] = 'https://github.com/talaatmagdyx/socials_regex/issues'
   spec.metadata['wiki_uri'] = 'https://github.com/talaatmagdyx/socials_regex/wiki'
   spec.post_install_message = "Thanks for installing!"
-
+  spec.platform              = Gem::Platform::RUBY
 
   # Specify which files should be added to the gem when it is released.
   # The `git ls-files -z` loads the files in the RubyGem that have been added into git.
@@ -41,4 +41,8 @@ Gem::Specification.new do |spec|
 
   # For more information and examples about making a new gem, check out our
   # guide at: https://bundler.io/guides/creating_gem.html
+
+  spec.add_development_dependency 'rubocop', '~> 0.60'
+  spec.add_development_dependency 'rubocop-performance', '~> 1.5'
+  spec.add_development_dependency 'rubocop-rspec', '~> 1.37'
 end
