@@ -1,0 +1,24 @@
+module SocialsRegex
+  class Platforms
+    PLATFORM_ANGELLIST: string
+    PLATFORM_CRUNCHBASE: string
+    PLATFORM_EMAIL: string
+    PLATFORM_FACEBOOK: string
+    PLATFORM_GITHUB: string
+    PLATFORM_HACKER_NEWS: string
+    PLATFORM_INSTAGRAM: string
+    PLATFORM_LINKEDIN: string
+    PLATFORM_MEDIUM: string
+    PLATFORM_PHONE: string
+    PLATFORM_REDDIT: string
+    PLATFORM_SKYPE: string
+    PLATFORM_SNAPCHAT: string
+    PLATFORM_STACKEXCHANGE: string
+    PLATFORM_STACKOVERFLOW: string
+    PLATFORM_TELEGRAM: string
+    PLATFORM_TWITTER: string
+    PLATFORM_VIMEO: string
+    PLATFORM_XING: string
+    PLATFORM_YOUTUBE: string
+  end
+end

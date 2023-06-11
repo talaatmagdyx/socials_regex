@@ -1,0 +1,8 @@
+module SocialsRegex
+  class Regexes
+    ANGELLIST_URL_REGEX: Hash[Symbol, Regexp]
+    CRUNCHBASE_URL_REGEX: Hash[Symbol, Regexp]
+    EMAIL_URL_REGEX: Hash[Symbol, Regexp]
+    FACEBOOK_URL_REGEX: Hash[Symbol, Regexp]
+  end
+end
