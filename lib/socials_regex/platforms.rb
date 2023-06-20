@@ -1,5 +1,4 @@
 # frozen_string_literal: true
-
 module SocialsRegex
   class Platforms
     PLATFORM_FACEBOOK = 'facebook'
@@ -25,6 +24,17 @@ module SocialsRegex
     PLATFORM_STACKEXCHANGE_NETWORK = 'stackexchange network'
     PLATFORM_WHATSAPP = 'whatsapp'
     PLATFORM_YELP = 'yelp'
+
+    def self.all
+      Platforms.constants
+    end
+
+    def self.show(const_name:)
+      Platforms.const_get(const_name)
+    rescue NameError
+      raise SocialsRegex::Error,
+            "#{const_name} platform don't support please read our supported platforms =>  #{Platforms.all.join(',')}"
+    end
   end
 
   class Regexes
@@ -202,12 +212,12 @@ module SocialsRegex
 
     WHATSAPP_URL_REGEX = {
       # https://wa.me/1234567890
-      phone: /(?:https?:)?\/\/(?:wa\.me\/)(?<number>\+?[0-9. -]+)/
-    }
+      phone: %r{(?:https?:)?//(?:wa\.me/)(?<number>\+?[0-9. -]+)}
+    }.freeze
 
     YELP_URL_REGEX = {
       # https://www.yelp.com/biz/example-business
-      company: /(?:https?:\/\/)?(?:www\.)?yelp\.com\/biz\/([A-Za-z0-9_-]+)/
-    }
+      company: %r{(?:https?://)?(?:www\.)?yelp\.com/biz/([A-Za-z0-9_-]+)}
+    }.freeze
   end
 end

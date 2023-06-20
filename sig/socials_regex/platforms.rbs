@@ -23,5 +23,9 @@ module SocialsRegex
     PLATFORM_XING: string
     PLATFORM_YELP: string
     PLATFORM_YOUTUBE: string
+
+    def self.all: ->  Array[Symbol]
+
+    def self.show: (const_name: Symbol | string) -> string
   end
 end
