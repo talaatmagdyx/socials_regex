@@ -32,8 +32,9 @@ module SocialsRegex
     def self.show(const_name:)
       Platforms.const_get(const_name)
     rescue NameError
-      raise SocialsRegex::Error,
-            "#{const_name} platform don't support please read our supported platforms =>  #{Platforms.all.join(',')}"
+      # raise Error,
+      # "#{const_name} platform don't support please read our supported platforms =>  #{Platforms.all.join(',')}"
+      ''
     end
   end
 
