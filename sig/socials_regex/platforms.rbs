@@ -19,7 +19,9 @@ module SocialsRegex
     PLATFORM_TELEGRAM: string
     PLATFORM_TWITTER: string
     PLATFORM_VIMEO: string
+    PLATFORM_WHATSAPP: string
     PLATFORM_XING: string
+    PLATFORM_YELP: string
     PLATFORM_YOUTUBE: string
   end
 end

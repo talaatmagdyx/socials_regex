@@ -19,7 +19,9 @@ module SocialsRegex
     TELEGRAM_URL_REGEX: Hash[Symbol, Regexp]
     TWITTER_URL_REGEX: Hash[Symbol, Regexp]
     VIMEO_URL_REGEX: Hash[Symbol, Regexp]
+    WHATSAPP_URL_REGEX: Hash[Symbol, Regexp]
     XING_URL_REGEX: Hash[Symbol, Regexp]
+    YELP_URL_REGEX: Hash[Symbol, Regexp]
     YOUTUBE_URL_REGEX: Hash[Symbol, Regexp]
   end
 end

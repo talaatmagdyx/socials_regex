@@ -23,6 +23,8 @@ module SocialsRegex
     PLATFORM_ANGELLIST = 'angellist'
     PLATFORM_CRUNCHBASE = 'crunchbase'
     PLATFORM_STACKEXCHANGE_NETWORK = 'stackexchange network'
+    PLATFORM_WHATSAPP = 'whatsapp'
+    PLATFORM_YELP = 'yelp'
   end
 
   class Regexes
@@ -197,5 +199,15 @@ module SocialsRegex
       # https://www.youtube.com/watch?v=6_b7RDuLwcI
       video: %r{(?:https?:)?//(?:(?:www\.)?youtube\.com/(?:watch\?v=|embed/)|youtu\.be/)(?<id>[A-z0-9\-_]+)}
     }.freeze
+
+    WHATSAPP_URL_REGEX = {
+      # https://wa.me/1234567890
+      phone: /(?:https?:)?\/\/(?:wa\.me\/)(?<number>\+?[0-9. -]+)/
+    }
+
+    YELP_URL_REGEX = {
+      # https://www.yelp.com/biz/example-business
+      company: /(?:https?:\/\/)?(?:www\.)?yelp\.com\/biz\/([A-Za-z0-9_-]+)/
+    }
   end
 end
