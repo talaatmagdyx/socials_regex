@@ -276,5 +276,166 @@ RSpec.describe SocialsRegex::Regexes do
     end
   end
 
+  context SocialsRegex::Platforms::PLATFORM_SKYPE do
+    context 'with profile validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: 'skype:echo123',
+                                      regex: SocialsRegex::Regexes::SKYPE_URL_REGEX[:profile])).to be true
+      end
 
+      it 'Valid with call' do
+        expect(described_class.match?(input_str: 'skype:echo123?call',
+                                      regex: SocialsRegex::Regexes::SKYPE_URL_REGEX[:profile])).to be true
+      end
+    end
+  end
+
+  context SocialsRegex::Platforms::PLATFORM_SNAPCHAT do
+    context 'with profile validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: 'https://www.snapchat.com/add/example_user/',
+                                      regex: SocialsRegex::Regexes::SNAPCHAT_URL_REGEX[:profile])).to be true
+      end
+    end
+  end
+
+  context SocialsRegex::Platforms::PLATFORM_STACKEXCHANGE do
+    context 'with user validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: 'https://www.stackexchange.com/users/12345/example_user/',
+                                      regex: SocialsRegex::Regexes::STACKEXCHANGE_URL_REGEX[:user])).to be true
+      end
+    end
+  end
+
+  context SocialsRegex::Platforms::PLATFORM_STACKEXCHANGE_NETWORK do
+    context 'with user validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: 'https://gaming.stackexchange.com/users/304007/talaat-magdy',
+                                      regex: SocialsRegex::Regexes::STACKEXCHANGE_NETWORK_URL_REGEX[:user])).to be true
+      end
+    end
+  end
+
+  context SocialsRegex::Platforms::PLATFORM_STACKOVERFLOW do
+    context 'with question validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: 'https://stackoverflow.com/questions/12345/how-to-embed',
+                                      regex: SocialsRegex::Regexes::STACKOVERFLOW_URL_REGEX[:question])).to be true
+      end
+    end
+
+    context 'with user validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: 'https://stackoverflow.com/users/13916928/talaat-magdy',
+                                      regex: SocialsRegex::Regexes::STACKOVERFLOW_URL_REGEX[:user])).to be true
+      end
+    end
+  end
+
+  context SocialsRegex::Platforms::PLATFORM_TELEGRAM do
+    context 'with profile validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: 'https://t.me/example_username/',
+                                      regex: SocialsRegex::Regexes::TELEGRAM_URL_REGEX[:profile])).to be true
+      end
+    end
+  end
+
+  context SocialsRegex::Platforms::PLATFORM_TWITTER do
+    context 'with status validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: 'https://twitter.com/karllorey/status/1259924082067374088',
+                                      regex: SocialsRegex::Regexes::TWITTER_URL_REGEX[:status])).to be true
+      end
+    end
+
+    context 'with user validate' do
+      it 'Valid with http' do
+        expect(described_class.match?(input_str: 'http://twitter.com/talaatmagdyx',
+                                      regex: SocialsRegex::Regexes::TWITTER_URL_REGEX[:user])).to be true
+      end
+
+      it 'Valid with https' do
+        expect(described_class.match?(input_str: 'https://twitter.com/talaatmagdyx',
+                                      regex: SocialsRegex::Regexes::TWITTER_URL_REGEX[:user])).to be true
+      end
+    end
+  end
+
+  context SocialsRegex::Platforms::PLATFORM_VIMEO do
+    context 'with user validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: 'https://vimeo.com/user12345',
+                                      regex: SocialsRegex::Regexes::VIMEO_URL_REGEX[:user])).to be true
+      end
+    end
+
+    context 'with video validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: 'https://vimeo.com/123456789',
+                                      regex: SocialsRegex::Regexes::VIMEO_URL_REGEX[:video])).to be true
+      end
+
+      it 'Valid with player tag' do
+        expect(described_class.match?(input_str: 'https://player.vimeo.com/video/148751763',
+                                      regex: SocialsRegex::Regexes::VIMEO_URL_REGEX[:video])).to be true
+      end
+    end
+  end
+
+  context SocialsRegex::Platforms::PLATFORM_XING do
+    context 'with profile validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: ' https://www.xing.com/profile/Tobias_Zilbersahn5',
+                                      regex: SocialsRegex::Regexes::XING_URL_REGEX[:profile])).to be true
+      end
+    end
+  end
+
+  context SocialsRegex::Platforms::PLATFORM_YOUTUBE do
+    context 'with user validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: 'https://www.youtube.com/user/username123',
+                                      regex: SocialsRegex::Regexes::YOUTUBE_URL_REGEX[:user])).to be true
+      end
+    end
+
+    context 'with channel validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: 'https://www.youtube.com/channel/UCxyz123456789',
+                                      regex: SocialsRegex::Regexes::YOUTUBE_URL_REGEX[:channel])).to be true
+      end
+    end
+
+    context 'with video validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: 'https://www.youtube.com/watch?v=dQw4w9WgXcQ',
+                                      regex: SocialsRegex::Regexes::YOUTUBE_URL_REGEX[:video])).to be true
+      end
+
+      it 'Valid with embed tag' do
+        expect(described_class.match?(input_str: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
+                                      regex: SocialsRegex::Regexes::YOUTUBE_URL_REGEX[:video])).to be true
+      end
+    end
+  end
+
+  context SocialsRegex::Platforms::PLATFORM_WHATSAPP do
+    context 'with phone validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: 'https://wa.me/1234567890',
+                                      regex: SocialsRegex::Regexes::WHATSAPP_URL_REGEX[:phone])).to be true
+      end
+    end
+  end
+
+  context SocialsRegex::Platforms::PLATFORM_YELP do
+    context 'with company validate' do
+      it 'Valid' do
+        expect(described_class.match?(input_str: 'https://www.yelp.com/biz/example-business',
+                                      regex: SocialsRegex::Regexes::YELP_URL_REGEX[:company])).to be true
+      end
+    end
+  end
 end
