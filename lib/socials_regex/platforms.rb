@@ -44,8 +44,10 @@ module SocialsRegex
       # https://angel.co/company/twitter, https://angel.co/company/twitter/culture
       company: %r{(?:https?:)?//angel\.co/company/(?<company>[A-Za-z0-9_-]+)(?:/(?<company_subpage>[A-Za-z0-9-]+))?},
       # https://angel.co/company/twitter/jobs/576275-engineering-manager
-      job: %r{(?:https?:)?//angel\.co/company/(?<company>[A-Za-z0-9_-]+)
-           /jobs/(?<job_permalink>(?<job_id>[0-9]+)-(?<job_slug>[A-Za-z0-9-]+))}x,
+      job: %r{
+      (?:https?:)?//angel\.co/company/(?<company>[A-Za-z0-9_-]+)
+       /jobs/(?<job_permalink>(?<job_id>[0-9]+)-(?<job_slug>[A-Za-z0-9-]+))
+      }x,
       # https://angel.co/p/naval, https://angel.co/u/karllorey
       user: %r{(?:https?:)?//angel\.co/(?<type>u|p)/(?<user>[A-Za-z0-9_-]+)}
     }.freeze
@@ -59,13 +61,16 @@ module SocialsRegex
 
     EMAIL_URL_REGEX = {
       # jeff@amazon.com, mailto:jeff@amazon.com, mailto:plususer+test@gmail.com
-      email: /(?:mailto:)?(?<email>[A-Za-z0-9_.+-]+@[A-Za-z0-9_.-]+\.[A-Za-z]+)/
+      email: /(?:mailto:)?(?<email>[A-Za-z0-9_.+-]+@[A-Za-z0-9_.-]+\.[A-Za-z]+)/,
+      email_without_extract: /\A[\w+\-.]+@[a-z\d-]+(\.[a-z\d-]+)*\.[a-z]+\z/i
     }.freeze
 
     FACEBOOK_URL_REGEX = {
       # http://fb.com/peter_parker-miller, https://facebook.com/peter.parker, https://facebook.com/peterparker
-      username: %r{(?:https?:)?//(?:www\.)?(?:facebook|fb)\.com/(?<profile>(?![A-Za-z]+\.php)
-(?!marketplace|gaming|watch|me|messages|help|search|groups)[A-Za-z0-9_\-.]+)/?}x,
+      username: %r{
+      (?:https?:)?//(?:www\.)?(?:facebook|fb)\.com/(?<profile>(?![A-Za-z]+\.php)
+      (?!marketplace|gaming|watch|me|messages|help|search|groups)[A-Za-z0-9_\-.]+)/?
+      }x,
       # https://www.facebook.com/100004123456789, https://www.facebook.com/profile.php?id=100004123456789
       profile_id: %r{(?:https?:)?//(?:www\.)?facebook\.com/(?:profile\.php\?id=)?(?<id>[0-9]+)}
     }.freeze
@@ -92,14 +97,14 @@ module SocialsRegex
       # Match underscores _disco__dude
       # Max characters of 30 1234567890123456789012345678901234567890
       # https://instagram.com/__disco__dude
-      profile: %r{(?:https?:)?//(?:www\.)?(?:instagram\.com|instagr\.am)/(?<username>[A-Za-z0-9_]
-(?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)}x
+      profile: %r{(?:https?:)?//(?:www\.)?(?:instagram\.com|instagr\.am)/
+       (?<username>[A-Za-z0-9_](?:(?:[A-Za-z0-9_]|(?:\.(?!\.))){0,28}(?:[A-Za-z0-9_]))?)}x
     }.freeze
 
     LINKEDIN_URL_REGEX = {
       # https://fr.linkedin.com/school/université-grenoble-alpes/
       company: %r{(?:https?:)?//(?:\w+\.)?linkedin\.com/(?<company_type>
-(?:company|school))/(?<company_permalink>[A-Za-z0-9\-À-ÿ.]+)/?},
+      (?:company|school))/(?<company_permalink>[A-Za-z0-9\-À-ÿ.]+)/?}x,
       # https://www.linkedin.com/feed/update/urn:li:activity:6665508550111912345/
       post: %r{(?:https?:)?//(?:\w+\.)?linkedin\.com/feed/update/urn:li:activity:(?<activity_id>[0-9]+)/?},
       # https://www.linkedin.com/in/talaatmagdyx/
@@ -114,6 +119,7 @@ module SocialsRegex
       # Can't match these with the regular post regex as redefinitions of subgroups are not allowed in pythons regex.
       post_of_subdomain_publication: %r{(?:https?:)?//(?<publication>(?!www)[a-z-]+)\.medium\.com/
 (?<slug>[a-z0-9-]+)-(?<post_id>[A-Za-z0-9]+)(?:\?.*)?}x,
+      # https://medium.com/@karllorey
       user: %r{(?:https?:)?//medium\.com/@(?<username>[A-Za-z0-9]+)(?:\?.*)?},
       # Now redirects to new user profiles. Follow with a head or get request.
       # https://medium.com/u/b3d3d3653c2c?source=post_page-----da92b81b85ef----------------------
@@ -221,5 +227,9 @@ module SocialsRegex
       # https://www.yelp.com/biz/example-business
       company: %r{(?:https?://)?(?:www\.)?yelp\.com/biz/([A-Za-z0-9_-]+)}
     }.freeze
+
+    def self.match?(input_str:, regex:)
+      input_str.match(regex) ? true : false
+    end
   end
 end

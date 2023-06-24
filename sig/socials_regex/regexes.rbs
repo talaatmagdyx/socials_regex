@@ -23,5 +23,7 @@ module SocialsRegex
     XING_URL_REGEX: Hash[Symbol, Regexp]
     YELP_URL_REGEX: Hash[Symbol, Regexp]
     YOUTUBE_URL_REGEX: Hash[Symbol, Regexp]
+
+    def self.match?: (input_str: string, regex: Regexp)-> bool
   end
 end
