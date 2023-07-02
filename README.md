@@ -2,6 +2,12 @@
 
 Social Regex Account Detection and Extraction for Ruby. Detect and extract URLs of social accounts: throw in URLs, get back URLs of social media profiles by type.
 
+Features:
+
+- detect the platform a url points to (all major platforms supported)
+- extract the information contained within the url (without opening the url, of course)
+- extract emails and phone numbers from hyperlinks
+
 ## Installation
 
 Install the gem and add to the application's Gemfile by executing:
@@ -75,6 +81,10 @@ matches = extract.extract_matches_by_regex(regex: SocialsRegex::Regexes::TWITTER
 
 
 ```
+
+# References
+- [social-media-profiles-regexs](https://github.com/lorey/social-media-profiles-regexs):
+  extract urls of social media profiles with regular expressions
 
 ## Development
 
