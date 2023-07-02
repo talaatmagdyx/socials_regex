@@ -18,7 +18,7 @@ throw in URLs, get back URLs of social media profiles by type.'
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['documentation_uri'] = 'https://github.com/talaatmagdyx/socials_regex/wiki'
   spec.metadata['source_code_uri'] = 'https://github.com/talaatmagdyx/socials_regex'
-  spec.metadata['changelog_uri'] = 'https://github.com/talaatmagdyx/socials_regex/CHANGELOG.md'
+  spec.metadata['changelog_uri'] = 'https://github.com/talaatmagdyx/socials_regex/blob/master/CHANGELOG.md'
   spec.metadata['bug_tracker_uri'] = 'https://github.com/talaatmagdyx/socials_regex/issues'
   spec.metadata['wiki_uri'] = 'https://github.com/talaatmagdyx/socials_regex/wiki'
   spec.post_install_message = 'Thanks for installing!'
