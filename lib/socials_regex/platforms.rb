@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 module SocialsRegex
+  # all supported platforms
   class Platforms
     PLATFORM_FACEBOOK = 'facebook'
     PLATFORM_GITHUB = 'github'
@@ -39,6 +40,7 @@ module SocialsRegex
     end
   end
 
+  # all regex for all platforms
   class Regexes
     ANGELLIST_URL_REGEX = {
       # https://angel.co/company/twitter, https://angel.co/company/twitter/culture
@@ -225,7 +227,7 @@ module SocialsRegex
 
     YELP_URL_REGEX = {
       # https://www.yelp.com/biz/example-business
-      company: %r{(?:https?://)?(?:www\.)?yelp\.com/biz/([A-Za-z0-9_-]+)}
+      company: %r{(?:https?://)?(?:www\.)?yelp\.com/biz/(?<company>[A-Za-z0-9_-]+)}
     }.freeze
 
     def self.match?(input_str:, regex:)

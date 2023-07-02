@@ -1,0 +1,6 @@
+module SocialsRegex
+  class Socials
+    ERROR_MSG_UNKNOWN_PLATFORM: string
+    PLATFORMS_REGEX: Hash[Symbol, Hash[Symbol, Regexp]]
+  end
+end

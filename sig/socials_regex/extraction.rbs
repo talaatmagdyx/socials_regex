@@ -1,0 +1,21 @@
+module SocialsRegex
+  class Extraction
+    attr_accessor text: string
+
+    def initialize: (text: string)-> void
+
+    def extract_matches_per_platform: -> Hash[Symbol, Array[Hash[Symbol, string]]]
+
+    def extract_matches_by_regex: (regex: Regexp | string) -> Array[Hash[Symbol, string]]
+
+    def extract_matches_by_platform: (platform: string)-> Hash[Symbol, Array[Hash[Symbol, string]]]
+
+    private
+
+    def platform_matches: (regexes: Hash[Symbol, Regexp], platform: string | Symbol) -> Hash[Symbol, Array[Hash[Symbol, string]]]
+
+    def matches: (regex: Regexp | string) -> Array[Hash[Symbol, string]]
+
+    def reformat_matches: (matches: Array[MatchData]) -> Array[Hash[Symbol, string]]
+  end
+end
