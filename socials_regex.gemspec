@@ -15,8 +15,6 @@ throw in URLs, get back URLs of social media profiles by type.'
   spec.license = 'MIT'
   spec.required_ruby_version = '>= 2.6.0'
 
-  spec.metadata['allowed_push_host'] = "https://rubygems.org/"
-
   spec.metadata['homepage_uri'] = spec.homepage
   spec.metadata['documentation_uri'] = 'https://github.com/talaatmagdyx/socials_regex/wiki'
   spec.metadata['source_code_uri'] = 'https://github.com/talaatmagdyx/socials_regex'
