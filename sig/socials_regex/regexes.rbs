@@ -24,6 +24,8 @@ module SocialsRegex
     YELP_URL_REGEX: Hash[Symbol, Regexp]
     YOUTUBE_URL_REGEX: Hash[Symbol, Regexp]
 
+    def self.all: -> Array[Symbol]
+
     def self.match?: (input_str: string, regex: Regexp)-> bool
   end
 end

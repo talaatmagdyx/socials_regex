@@ -9,6 +9,6 @@
 7. Commit and push your changes.
 8. [Submit a pull request.][pr]
 
-[fork]: http://help.github.com/fork-a-repo/
+[fork]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/working-with-forks/about-forks
 [branch]: https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-branches
 [pr]: https://help.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests

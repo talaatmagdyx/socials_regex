@@ -233,5 +233,9 @@ module SocialsRegex
     def self.match?(input_str:, regex:)
       input_str.match(regex) ? true : false
     end
+
+    def self.all
+      Regexes.constants
+    end
   end
 end
