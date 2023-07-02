@@ -1,5 +1,6 @@
 # SocialsRegex
 
+----
 Social Regex Account Detection and Extraction for Ruby. Detect and extract URLs of social accounts: throw in URLs, get back URLs of social media profiles by type.
 
 Features:
@@ -95,6 +96,12 @@ To install this gem onto your local machine, run `bundle exec rake install`. To 
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at [Contributing](https://github.com/talaatmagdyx/socials_regex/blob/master/.github/CODE_OF_CONDUCT.md). This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/talaatmagdyx/socials_regex/blob/master/CODE_OF_CONDUCT.md).
+
+## [ChangeLog](./CHANGELOG.md)
+
+## Reporting Bugs / Feature Requests
+
+Please [open an Issue on GitHub](https://github.com/talaatmagdyx/socials_regex/issues) if you have feedback, new feature requests, or want to report a bug. Thank you!
 
 ## Pull Request
 Please read [Contributing](https://github.com/talaatmagdyx/socials_regex/blob/master/.github/PULL_REQUEST_TEMPLATE.md)
